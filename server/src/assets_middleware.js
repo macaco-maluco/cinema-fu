@@ -4,17 +4,15 @@ var connect = require('connect'),
 var app = connect();
 
 app.use(sass.middleware({
-  src: __dirname + '/../../client/src',
+  src: __dirname + '/../../client',
   includePaths: [__dirname + '/../../client/src', __dirname + '/../../client/vendor/css'],
   dest: __dirname + '/../public',
   force: true
 }));
 
 var staticPaths = [
-  __dirname + '/../../client/src',
-  __dirname + '/../../client/vendor/js',
+  __dirname + '/../../client',
   __dirname + '/../../client/vendor/css',
-  __dirname + '/../../client/config',
   __dirname + '/../public'
 ];
 
