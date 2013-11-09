@@ -25,6 +25,7 @@
     "grunt-exec": "~0.4.2",
     "grunt-contrib-jshint": "~0.7.1",
     "rsvp": "~2.0.4",
-    "node-sass": "~0.7.0"
+    "node-sass": "~0.7.0",
+    "tmdbv3": "~0.1.2"
   }
 }

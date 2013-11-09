@@ -17,4 +17,13 @@ describe("CinemaInfo", function() {
       });
     });
   });
+
+describe("finding movies", function() {
+    it("should find movies by title", function(done) {
+      cinemaInfo.findMovie('Pulp Fiction').then(function(actors) {
+        expect(actors[0].name).toEqual('Pulp Fiction');
+        done();
+      });
+    });
+  });
 });
