@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "nko": "*",
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "request": "~2.27.0"
   },
   "engines": {
     "node": "0.10.x"
@@ -20,6 +21,7 @@
   "devDependencies": {
     "jasmine-node": "~1.11.0",
     "grunt-exec": "~0.4.2",
-    "grunt-contrib-jshint": "~0.7.1"
+    "grunt-contrib-jshint": "~0.7.1",
+    "rsvp": "~2.0.4"
   }
 }

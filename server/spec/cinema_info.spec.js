@@ -1,0 +1,20 @@
+require('./spec_helper');
+
+var CinemaInfo = require("../src/cinema_info");
+
+describe("CinemaInfo", function() {
+  var cinemaInfo;
+
+  beforeEach(function() {
+    cinemaInfo = new CinemaInfo({ apiKey: "AIzaSyCv3iG-safcVm4DVTTw9QasCnamIETAQg0" });
+  });
+
+  describe("finding people", function() {
+    it("should be able to find only people and movies related to the film indurstry", function(done) {
+      cinemaInfo.findActor('Tom Hanks').then(function(actors) {
+        expect(actors[0].name).toEqual('Tom Hanks');
+        done();
+      });
+    });
+  });
+});
