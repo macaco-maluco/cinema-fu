@@ -5,4 +5,7 @@ var evironment = process.env.NODE_ENV || 'development',
 // https://github.com/nko4/website/blob/master/module/README.md#nodejs-knockout-deploy-check-ins
 require('nko')('awwWL_rW1RBpk3Ii');
 
-application.listen(8000);
+var isProduction = (process.env.NODE_ENV === 'production');
+var port = (isProduction ? 80 : 8000);
+
+application.listen(port);
