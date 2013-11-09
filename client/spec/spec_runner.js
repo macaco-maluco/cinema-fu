@@ -3,7 +3,7 @@ require([
   'jasmine',
   'jasmine-html',
 
-  'spec/game/game_session.spec'
+  'spec/challenge/node_view_spec'
 ],
 function($, jasmine) {
   var jasmineEnv = jasmine.getEnv();
