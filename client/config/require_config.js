@@ -6,10 +6,11 @@ var require = {
     'jquery': '../vendor/js/jquery',
     'underscore': '../vendor/js/underscore',
     'backbone': '../vendor/js/backbone',
+    'backbone-accessorize': '../vendor/js/backbone-accessorize',
     'backbone.marionette': '../vendor/js/backbone.marionette',
     'backbone.babysitter': '../vendor/js/backbone.babysitter',
     'backbone.wreqr': '../vendor/js/backbone.wreqr',
-    'hbs': '../vendor/js/hbs',
+    'tpl': '../vendor/js/tpl',
     'sinon': '../vendor/js/sinon',
     'jasmine': '../vendor/js/jasmine',
     'jasmine-html': '../vendor/js/jasmine-html',
@@ -25,6 +26,11 @@ var require = {
       deps: ['underscore', 'jquery']
     },
 
+    'backbone-accessorize': {
+      exports: 'Backbone',
+      deps: ['backbone']
+    },
+
     'underscore': {
       exports: '_'
     },
@@ -37,10 +43,12 @@ var require = {
       deps: ['jquery'],
       exports: 'jasmine'
     },
-    'jasmine-sinon': ['sinon'],
+
     'jasmine': {
       exports: 'jasmine'
     },
+
+    'jasmine-sinon': ['sinon'],
     'jasmine-html': ['jasmine'],
 
     'foundation': {
