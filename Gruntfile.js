@@ -12,10 +12,18 @@ module.exports = function(grunt) {
         }
       },
     },
+
+    jshint: {
+      options: {
+        jshintrc: true
+      },
+      all: ['client/**/*.js', 'server/**/*.js']
+    }
   });
 
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.registerTask('dev', 'exec:watch_server_spec');
-  grunt.registerTask('default', 'exec:server_spec');
+  grunt.registerTask('default', ['jshint', 'exec:server_spec']);
 };
