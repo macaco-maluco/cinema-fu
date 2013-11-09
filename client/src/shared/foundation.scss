@@ -1,0 +1,10 @@
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "foundation/variables";
+
+$include-html-classes: false;
+$include-print-styles: false;
+
+// Foundation Components
+@import
+  "foundation/components/global",
+  "foundation/components/grid";
