@@ -1,3 +1,4 @@
 node_modules
 *.un~
 server/public
+.vagrant
