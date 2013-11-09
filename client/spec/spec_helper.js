@@ -1,5 +1,7 @@
 define([
-  'jasmine'
+  'jasmine',
+  'jasmine-jquery',
+  'jasmine-sinon'
 ],
 function (jasmine) {
   return jasmine;
