@@ -1,8 +1,11 @@
 define([
   'backbone.marionette',
-  'game/game_session'
+  'spec/fixture/graph_fixture',
+  'challenge/node',
+  'challenge/challenge',
+  'challenge/challenge_view'
 ],
-function (Marionette) {
+function (Marionette, fixture, Node, Challenge, ChallengeView) {
   var application = new Marionette.Application();
 
   application.addRegions({
@@ -10,7 +13,14 @@ function (Marionette) {
   });
 
   application.addInitializer(function () {
-    console.log('yay')
+    var graph = fixture();
+
+    var challenge = new Challenge({
+      start: graph.kevinBacon,
+      goal: graph.spielberg
+    });
+
+    this.mainRegion.show(new ChallengeView({ model: challenge }));
   });
 
   return application;

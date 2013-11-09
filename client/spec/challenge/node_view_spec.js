@@ -10,7 +10,7 @@ function (jasmine, sinon, NodeView, Node) {
     var view, node;
 
     beforeEach(function() {
-      node = new Node({ name: 'Tom Hanks', pictureUrl: 'http://lol.jpeg' })
+      node = new Node({ name: 'Tom Hanks', pictureUrl: 'http://lol.jpeg' });
       view = new NodeView({ model: node, selectable: true }).render();
     });
 

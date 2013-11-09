@@ -3,6 +3,9 @@ require([
   'jasmine',
   'jasmine-html',
 
+  'spec/challenge/challenge_spec',
+  'spec/challenge/challenge_view_spec',
+  'spec/challenge/node_selection_view_spec',
   'spec/challenge/node_view_spec'
 ],
 function($, jasmine) {
