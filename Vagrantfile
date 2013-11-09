@@ -9,6 +9,9 @@ Vagrant.configure("2") do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
 
+  # Use [berkshelf](http://berkshelf.com/)
+  config.berkshelf.enabled = true
+
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   # config.vm.box_url = "http://domain.com/path/to/above.box"
@@ -85,6 +88,24 @@ Vagrant.configure("2") do |config|
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
   # end
+
+  config.vm.provision :chef_solo do |chef|
+    chef.json = {
+      "nodejs" => {
+        "version" => "0.10.21"
+      },
+      "mongodb" => {
+        "package_version" => "2.4.8"
+      }
+    }
+
+    chef.add_recipe "git"
+    chef.add_recipe "nodejs"
+    chef.add_recipe "mongodb::10gen_repo"
+    chef.add_recipe "mongodb::default"
+  end
+
+  config.vm.provision :shell, :inline => "cd /vagrant && npm install"
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
