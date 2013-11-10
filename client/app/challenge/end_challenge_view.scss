@@ -49,3 +49,53 @@
     }
   }
 }
+
+  .challenged-honesto {
+    background: #8e455b;
+    height: 460px;
+
+.be-challenged {
+  @include grid-row();
+
+  h1 {
+    margin: 60px 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+  }
+
+  ul {
+    li {
+      float: left;
+
+      img, input {
+        display: block;
+      }
+
+      .try-to-find {
+        @include action-button;
+        padding: 15px 25px;
+        text-decoration: none;
+        margin: 20px auto 0 auto;
+        width: 60%;
+        font-size: 19px;
+
+        &:hover {
+          background: $beige;
+          color: $wine;
+        }
+      }
+
+      &.challenge-middle {
+        border-right: 1px solid;
+        border-left: 1px solid;
+        margin-right: 25px;
+        margin-left: 25px;
+        border-color: #a9707c;
+      }
+    }
+  }
+}
+}
