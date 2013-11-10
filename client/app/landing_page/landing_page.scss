@@ -3,7 +3,7 @@
   .header-honesto {
     background: $wine url(landing_page/img/header_background.jpg) top center;
     color: white;
-    height: 342px;
+    height: 462px;
 
     .headline {
       text-shadow: $dark-wine 1px 1px;
@@ -21,6 +21,26 @@
 
   header {
     @include grid-row;
+
+    .how-it-works-button {
+      background: $dark-beige;
+      text-transform: uppercase;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 4px;
+      text-shadow: 1px 1px #e1cbb9;
+      box-shadow: 0 3px black;
+      margin: 50px auto;
+      display: block;
+
+      &:hover {
+        background: #8e455b;
+        color: white;
+        text-shadow: none;
+      }
+    }
   }
 
   .how-it-works {
