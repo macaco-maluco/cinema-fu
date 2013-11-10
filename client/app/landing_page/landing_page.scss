@@ -65,14 +65,18 @@
   }
 
   .person-node {
-    img {
+    div {
+      margin: 18px auto auto;
+      height: 116px;
       width: 116px;
       border-radius: 100px;
-      display: block;
-      margin: auto;
-      margin-top: 18px;
-      box-shadow: inset 0 0 6px black;
+      box-shadow: inset 0px 0px 30px 6px rgba(0,0,0,0.9);
       overflow: hidden;
+    }
+
+    img {
+      z-index: -1;
+      position: relative;
     }
   }
 }
