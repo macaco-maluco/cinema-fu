@@ -5,11 +5,12 @@ define([
 function (Backbone, Node) {
 
   var Challenge = Backbone.Model.extendAndAccessorize({
-    accessors: ['start', 'goal', 'path', 'availableNodes'],
+    accessors: ['start', 'goal', 'path', 'availableNodes', 'status'],
     defaults: function () {
       return {
         path: new Node.Collection(),
-        availableNodes: new Node.Collection()
+        availableNodes: new Node.Collection(),
+        status: 'playing'
       };
     },
 
@@ -42,6 +43,7 @@ function (Backbone, Node) {
 
   function endChallenge () {
     this.trigger('end');
+    this.status('done');
   }
 
   return Challenge;

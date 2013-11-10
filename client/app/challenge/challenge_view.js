@@ -1,11 +1,12 @@
 define([
   'tpl!challenge/challenge_view.jst',
+  'jquery',
   'backbone.marionette',
   'challenge/end_challenge_view',
   'challenge/node_view',
   'challenge/node_selection_view'
 ],
-function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
+function (template, $, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
   var PathView = Marionette.CollectionView.extend({
     className: 'path',
     itemView: NodeView
@@ -24,6 +25,10 @@ function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
 
     modelEvents: {
       'end': end
+    },
+
+    initialize: function () {
+      this.listenTo(this.model.availableNodes(), 'reset', scrollToLastStep, this);
     },
 
     onRender: function () {
@@ -49,6 +54,12 @@ function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
     this.trigger('end');
     this.available.close();
     this.$('.available').remove();
+    $(document).scrollTop(this.$('.goal').offset().top - 90);
+  }
+
+  function scrollToLastStep () {
+    if (this.model.availableNodes().length === 0 || this.model.status() === 'done') { return; }
+    $(document).scrollTop(this.$('.path .node:last-child').offset().top - 80);
   }
 
   return ChallengeView;
