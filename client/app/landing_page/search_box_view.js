@@ -21,6 +21,7 @@ function (_, Backbone) {
         onSelect: function (sugestion) {
           that.$('.selected-name').html(sugestion.value);
           that.$('.selected-picture').attr('src', sugestion.pictureUrl);
+          that.$('.selected-id').val(sugestion.data);
         }
       });
     }
