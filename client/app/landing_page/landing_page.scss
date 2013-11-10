@@ -23,40 +23,36 @@
     @include grid-row;
   }
 
-
-  section {
-    @include grid-row;
-  }
-
   .how-it-works {
     color: white;
+    background: $dark-beige;
+    overflow: hidden;
+
     p {
       text-shadow: #977365 1px 1px;
+      margin-top: 30px;
+      margin-bottom: 50px;
     }
 
-
     h1 {
+      margin-top: 70px;
       text-transform: uppercase;
       font-weight: 300;
       font-size: 35px;
       color: $wine;
       text-align: center;
     }
+
+    .graph {
+      margin: 0 auto;
+      display: block;
+      padding-bottom: 50px;
+    }
   }
 
   .challenge-description {
     @include grid-column($columns: 7, $center: true);
     text-align: center;
-  }
-
-  .graph {
-    @include grid-row(collapse);
-    padding: 0;
-    margin: 90px 0;
-    li {
-      @include grid-column($columns: 2);
-      text-align: center;
-    }
   }
 
   figcaption {
@@ -76,7 +72,6 @@
     }
 
     img {
-      z-index: -1;
       position: relative;
     }
   }
@@ -122,6 +117,8 @@
       color: #6b5648;
       text-align: center;
       font-size: 18px;
+      margin-top: 30px;
+      margin-bottom: 50px;
     }
 
     .try-to-find-container {
