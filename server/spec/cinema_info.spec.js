@@ -1,6 +1,6 @@
 require('./spec_helper');
 
-var CinemaInfo = require("../src/cinema_info");
+var CinemaInfo = require("../app/cinema_info");
 
 describe("CinemaInfo", function() {
   var cinemaInfo;
