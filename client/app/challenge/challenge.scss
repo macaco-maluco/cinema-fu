@@ -20,25 +20,4 @@
       margin-left: 20px;
     }
   }
-
-  .path-container {
-    padding-top: 20px;
-  }
-
-  .available {
-    @include grid-row(1);
-
-    background: $dark-beige;
-    overflow: hidden;
-
-    .node {
-      @include grid-column(3);
-      margin-top: 20px;
-      min-height: 200px;
-      div {
-        max-width: 100px;
-        max-height: 120px;
-      }
-    }
-  }
 }

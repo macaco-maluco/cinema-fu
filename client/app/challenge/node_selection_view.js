@@ -4,6 +4,7 @@ define([
 ],
 function (Marionette, NodeView) {
   var NodeSelectionView = Marionette.CollectionView.extend({
+    className: 'node-selection',
     itemView: NodeView,
     itemViewOptions: { selectable: true },
     initialize: function () {

@@ -9,4 +9,28 @@
       margin: 40px 0;
     }
   }
+
+  .path-container {
+    padding-top: 20px;
+  }
+
+  .available {
+    background: $dark-beige;
+    overflow: hidden;
+  }
+
+  .node-selection {
+    @include grid-row(1);
+
+    .node {
+      @include grid-column(3);
+      margin-top: 20px;
+      min-height: 200px;
+      div {
+        max-width: 100px;
+        max-height: 120px;
+      }
+    }
+  }
+
 }
