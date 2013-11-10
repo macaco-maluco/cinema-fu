@@ -40,9 +40,10 @@
       border: none;
       border-radius: 4px;
       text-shadow: 1px 1px #e1cbb9;
-      box-shadow: 0 3px black;
+      box-shadow: 0 3px $dark-wine;
       margin: 50px auto;
       display: block;
+      color: $wine;
 
       &:focus {
         outline: 0;
