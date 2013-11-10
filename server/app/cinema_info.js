@@ -30,6 +30,10 @@ function filterEmptyImage(item) {
   return item.poster_path != null || item.profile_path != null;
 }
 
+function crewFilter (item) {
+  return _(['Director', 'Screenplay', 'Original Music Composer', 'Music']).contains(item.job);
+}
+
 function CinemaInfo () {}
 
 CinemaInfo.prototype = {
@@ -69,7 +73,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.cast.filter(filterEmptyImage).map(parsePerson));
+          resolve(_.union(res.cast, res.crew.filter(crewFilter)).filter(filterEmptyImage).map(parsePerson));
         }
       });
     });
@@ -81,7 +85,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.cast.filter(filterEmptyImage).map(parseMovie));
+          resolve(_.union(res.cast, res.crew.filter(crewFilter)).filter(filterEmptyImage).map(parseMovie));
         }
       });
     });
