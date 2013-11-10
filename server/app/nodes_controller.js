@@ -1,5 +1,6 @@
 var express = require('express'),
-    CinemaInfo = require('./cinema_info');
+    CinemaInfo = require('./cinema_info'),
+    Node = require('./node');
 
 var controller = express();
 
@@ -12,9 +13,10 @@ controller.get('/', function (req, res) {
 });
 
 controller.get('/:id', function (req, res) {
-  var info = new CinemaInfo();
-  info.getInfo(req.params.id).then(function(result) {
+  Node.findOrFetch(req.params.id).then(function(result) {
     res.send(result);
+  }, function (error) {
+    res.send(arguments.length);
   });
 });
 

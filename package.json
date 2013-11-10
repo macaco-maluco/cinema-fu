@@ -16,7 +16,8 @@
     "request": "~2.27.0",
     "express": "~3.4.4",
     "connect": "~2.11.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "mongoose": "~3.8.0"
   },
   "engines": {
     "node": "0.10.x"
