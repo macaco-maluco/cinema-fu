@@ -11,4 +11,8 @@ controller.get('/', function (req, res) {
   });
 });
 
+controller.get('/:id', function (req, res) {
+  res.send(req.params.id);
+});
+
 module.exports = controller;
