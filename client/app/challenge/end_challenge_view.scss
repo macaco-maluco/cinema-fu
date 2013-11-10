@@ -48,7 +48,7 @@
       }
     }
   }
-}
+
 
   .challenged-honesto {
     background: #8e455b;
@@ -98,4 +98,23 @@
     }
   }
 }
+}
+
+  footer {
+    background: #45424f;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+  }
+
+  .fb-like {
+    padding: 3px;
+    margin: 12px 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
 }
