@@ -23,6 +23,15 @@ function ($, Marionette, SearchBoxView) {
         window.location = "/challenge.html#/from/"+from+"/to/"+to;
       }
     });
+
+    $('.how-it-works-button').click(function (event) {
+      event.preventDefault();
+
+      document.getElementById('how-it-works').classList.toggle('closed');
+      document.getElementById('header-honesto').classList.toggle('closed');
+      $(this).hide();
+    })
+
   });
 
   $(application.start.bind(application));
