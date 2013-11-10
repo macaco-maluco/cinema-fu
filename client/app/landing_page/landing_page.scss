@@ -222,7 +222,7 @@
 
   .fb-like {
     padding: 3px;    
-    margin-top: 6px;
+    margin: 12px 0;
   }
 
   .nko-share {
@@ -231,5 +231,10 @@
     padding: 4px;
     border-radius: 6px;
     float: right;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
   }
 }
