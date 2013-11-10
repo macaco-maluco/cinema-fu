@@ -1,11 +1,13 @@
 define([
   'backbone.marionette',
+  'jquery',
   'spec/fixture/graph_fixture',
   'challenge/node',
   'challenge/challenge',
-  'challenge/challenge_view'
+  'challenge/challenge_view',
+  'es5-shim'
 ],
-function (Marionette, fixture, Node, Challenge, ChallengeView) {
+function (Marionette, $, fixture, Node, Challenge, ChallengeView) {
   var application = new Marionette.Application();
 
   application.addRegions({
@@ -23,5 +25,5 @@ function (Marionette, fixture, Node, Challenge, ChallengeView) {
     this.mainRegion.show(new ChallengeView({ model: challenge }));
   });
 
-  return application;
+  $(application.start.bind(application));
 });
