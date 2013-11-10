@@ -1,0 +1,78 @@
+.landing-page {
+
+  .header-honesto {
+    background: $wine url(landing_page/img/header_background.jpg) top center;
+    color: white;
+    height: 342px;
+  }
+
+  header {
+    @include grid-row;
+  }
+
+  .headline {
+    text-shadow: $dark-wine 1px 1px;
+    text-align: center;
+  }
+
+  .logo {
+    @include hide-text;
+    background-image: url(landing_page/img/logo.png);
+    width: 230px;
+    height: 100px;
+    margin: 95px auto 20px auto;
+  }
+
+  section {
+    @include grid-row;
+  }
+
+  .how-it-works {
+    color: white;
+    p {
+      text-shadow: #977365 1px 1px;
+    }
+
+
+    h1 {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 35px;
+      color: $wine;
+      text-align: center;
+    }
+  }
+
+  .challenge-description {
+    @include grid-column($columns: 7, $center: true);
+    text-align: center;
+  }
+
+  .graph {
+    @include grid-row(collapse);
+    padding: 0;
+    margin: 90px 0;
+    li {
+      @include grid-column($columns: 2);
+      text-align: center;
+    }
+  }
+
+  figcaption {
+    margin-top: 8px;
+    font-size: 17px;
+    text-shadow: #977365 1px 1px;
+  }
+
+  .person-node {
+    img {
+      width: 116px;
+      border-radius: 100px;
+      display: block;
+      margin: auto;
+      margin-top: 18px;
+      box-shadow: inset 0 0 6px black;
+      overflow: hidden;
+    }
+  }
+}
