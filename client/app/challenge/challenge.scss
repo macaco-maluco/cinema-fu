@@ -4,7 +4,6 @@
   header {
     background: $wine;
     height: 80px;
-    overflow: hidden;
     position: fixed;
     top: 0;
     right: 0;
@@ -18,6 +17,48 @@
       height: 41px;
       margin-top: 20px;
       margin-left: 20px;
+    }
+
+    .close-button {
+      background: #8e455b;
+      height: 44px;
+      width: 44px;
+      text-transform: uppercase;
+      font-size: 26px;
+      border-radius: 44px;
+      border: none;
+      display: block;
+      color: $beige;
+      float: right;
+      font-weigth: 300;
+      text-align: center;
+      line-height: 44px;
+      text-decoration: none;
+      margin-right: 20px;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover {
+        background: white;
+        color: $wine;
+        text-shadow: none;
+      }
+    }
+
+    .step-counter {
+      display: none;
+      background: #8e455b;
+      float: right;
+      width: 120px;
+      line-height: 44px;
+      border-radius: 44px;
+      text-align: center;
+      color: $beige;
+      font-size: 20px;
+      font-style: italic;
+      margin-right: 20px;
     }
   }
 
