@@ -18,11 +18,11 @@ function (Backbone, Node) {
     },
 
     walkTo: function (node) {
+      this.path().add(node);
+      setAvailableNodes.call(this, node.connections());
       if (this.goal().connections().findWhere({ id: node.id })) {
         endChallenge.call(this);
       }
-      this.path().add(node);
-      setAvailableNodes.call(this, node.connections());
     }
   });
 

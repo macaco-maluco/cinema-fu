@@ -11,7 +11,8 @@ function (template, Marionette) {
     },
     serializeData: function () {
       return {
-        fbUrl: encodeURIComponent(location.href)
+        fbUrl: encodeURIComponent(location.href),
+        steps: this.model.path().length
       };
     }
   });

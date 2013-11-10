@@ -45,7 +45,7 @@ function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
   }
 
   function end () {
-    this.result.show(new EndChallengeView());
+    this.result.show(new EndChallengeView({ model: this.model }));
     this.trigger('end');
     this.available.close();
     this.$('.available').remove();
