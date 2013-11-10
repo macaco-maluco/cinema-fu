@@ -15,7 +15,8 @@
     "grunt": "~0.4.1",
     "request": "~2.27.0",
     "express": "~3.4.4",
-    "connect": "~2.11.0"
+    "connect": "~2.11.0",
+    "underscore": "~1.5.2"
   },
   "engines": {
     "node": "0.10.x"

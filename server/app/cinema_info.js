@@ -1,6 +1,8 @@
 var request = require('request'),
-    Promise = require('rsvp').Promise,
-    tmdb = require('tmdbv3').init(process.env.TMDB_API_KEY);
+    RSVP = require('rsvp'),
+    Promise = RSVP.Promise,
+    tmdb = require('tmdbv3').init(process.env.TMDB_API_KEY),
+    _ = require('underscore');
 
 function parseActor(actor) {
   return {
@@ -15,12 +17,18 @@ function parseMovie (movie) {
     id: movie.id,
     name: movie.title,
     image: movie.poster_path
-  }
+  };
 }
 
 function CinemaInfo () {}
 
 CinemaInfo.prototype = {
+  find: function (query) {
+    return RSVP.all([this.findActor(query), this.findMovie(query)]).then(function (results) {
+      return _.flatten(results);
+    });
+  },
+
   findActor: function (query) {
     return new Promise(function(resolve, reject) {
       tmdb.search.person(query, function(err,res) {
