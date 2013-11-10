@@ -8,6 +8,11 @@ function (template, Marionette) {
     template: template,
     events: {
       'click .retry': reload
+    },
+    serializeData: function () {
+      return {
+        fbUrl: encodeURIComponent(location.href)
+      };
     }
   });
 
