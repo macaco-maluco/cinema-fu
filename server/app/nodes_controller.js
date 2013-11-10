@@ -6,7 +6,7 @@ var controller = express();
 controller.get('/', function (req, res) {
   var info = new CinemaInfo();
 
-  info.find(req.query.search).then(function (result) {
+  info.find(req.query.query).then(function (result) {
     res.send(result);
   });
 });
