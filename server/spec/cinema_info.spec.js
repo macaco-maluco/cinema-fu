@@ -38,8 +38,8 @@ describe("CinemaInfo", function() {
 
   describe("finding movie connections", function() {
     it("should find actor connected to movie", function(done) {
-      cinemaInfo.getConnections('movie_680').then(function(actors) {
-        expect(actors[0].name).toEqual('Bruce Willis');
+      cinemaInfo.getInfo('movie_680').then(function(actors) {
+        expect(actors.connections[0].name).toEqual('Bruce Willis');
         done();
       });
     });
@@ -47,8 +47,8 @@ describe("CinemaInfo", function() {
 
   describe("finding person connections", function() {
     it("should find movie person was an actor on", function(done) {
-      cinemaInfo.getConnections('person_31').then(function(movies) {
-        expect(movies[0].name).toEqual('Forrest Gump');
+      cinemaInfo.getInfo('person_31').then(function(movies) {
+        expect(movies.connections[0].name).toEqual('Forrest Gump');
         done();
       });
     });

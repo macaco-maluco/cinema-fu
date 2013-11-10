@@ -13,8 +13,8 @@ controller.get('/', function (req, res) {
 
 controller.get('/:id', function (req, res) {
   var info = new CinemaInfo();
-  info.getConnections(req.params.id).then(function(result) {
-    res.send({id: req.params.id, connections: result});
+  info.getInfo(req.params.id).then(function(result) {
+    res.send(result);
   });
 });
 

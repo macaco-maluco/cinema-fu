@@ -83,13 +83,46 @@ CinemaInfo.prototype = {
     });
   },
 
-  getConnections: function(id) {
-    var searchId = parseInt(id.slice(id.indexOf('_') + 1));
+  getPersonInfo: function(id) {
+    return new Promise(function(resolve, reject) {
+      tmdb.person.info(id, function(err,res) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(parsePerson(res));
+        }
+      });
+    });
+  },
+
+  getMovieInfo: function(id) {
+    return new Promise(function(resolve, reject) {
+      tmdb.movie.info(id, function(err,res) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(parseMovie(res));
+        }
+      });
+    });
+  },
+
+  getInfo: function(id) {
+    var searchId = parseInt(id.slice(id.indexOf('_') + 1), 10),
+        info, connections;
+
     if (id.indexOf('movie_') !== -1) {
-      return this.movieConnections(searchId);
+      info = this.getMovieInfo(searchId);
+      connections = this.movieConnections(searchId);
     } else {
-      return this.personConnections(searchId);
+      info = this.getPersonInfo(searchId);
+      connections = this.personConnections(searchId);
     }
+
+    return RSVP.all([info, connections]).then(function (results) {
+      results[0]['connections'] = results[1];
+      return results[0];
+    });
   }
 };
 
