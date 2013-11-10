@@ -20,4 +20,25 @@
       margin-left: 20px;
     }
   }
+
+  footer {
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 20px;
+      margin: 40px 0;
+    }
+    background: #45424f;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    margin-top: 60px
+  }
+
+  .facebook-share {
+    color: #45424f;
+    font-size: 40px;
+  }
 }
