@@ -4,6 +4,7 @@ var require = {
   paths: {
     'spec': '../spec',
     'jquery': '../vendor/js/jquery',
+    'jquery.autocomplete': '../vendor/js/jquery.autocomplete',
     'underscore': '../vendor/js/underscore',
     'backbone': '../vendor/js/backbone',
     'backbone-accessorize': '../vendor/js/backbone-accessorize',

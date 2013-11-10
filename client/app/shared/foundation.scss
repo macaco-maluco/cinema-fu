@@ -3,8 +3,11 @@
 
 $include-html-classes: false;
 $include-print-styles: false;
+$include-html-form-classes: true;
+$include-html-global-classes: true;
 
-// Foundation Components
 @import
   "foundation/components/global",
-  "foundation/components/grid";
+  "foundation/components/grid",
+  "foundation/components/buttons",
+  "foundation/components/forms";

@@ -79,4 +79,12 @@
       position: relative;
     }
   }
+
+  .create-challenge {
+    @include grid-row();
+    .from-node, .to-node {
+      @include grid-column(6);
+      border: none;
+    }
+  }
 }

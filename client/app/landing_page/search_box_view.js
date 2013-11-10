@@ -1,0 +1,30 @@
+define([
+  'underscore',
+  'backbone',
+  'jquery.autocomplete'
+],
+function (_, Backbone) {
+  var SearchBoxView = Backbone.View.extend({
+    render: function () {
+      var that = this;
+
+      this.$('.search').autocomplete({
+        serviceUrl: '/nodes/',
+        transformResult: function(response) {
+          var data = JSON.parse(response);
+          return {
+            suggestions: _.map(data, function(dataItem) {
+              return { value: dataItem.name, data: dataItem.id, pictureUrl: dataItem.pictureUrl };
+            })
+          };
+        },
+        onSelect: function (sugestion) {
+          that.$('.selected-name').html(sugestion.value);
+          that.$('.selected-picture').attr('src', sugestion.pictureUrl);
+        }
+      });
+    }
+  });
+
+  return SearchBoxView;
+});
