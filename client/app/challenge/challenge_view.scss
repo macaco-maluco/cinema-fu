@@ -1,10 +1,12 @@
 .challenge {
   .path {
     background: url(challenge/img/bg_path.png) top center repeat-y;
+    overflow: hidden;
 
     .node {
       background: $beige;
       padding: 10px 0;
+      margin: 40px 0;
     }
   }
 }
