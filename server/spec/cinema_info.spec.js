@@ -18,10 +18,37 @@ describe("CinemaInfo", function() {
     });
   });
 
-describe("finding movies", function() {
+  describe("finding nodes", function() {
+    it("should limit search result to 10 results", function(done) {
+      cinemaInfo.find('Kevin').then(function(nodes) {
+        expect(nodes.length).toEqual(10);
+        done();
+      });
+    });
+  });
+
+  describe("finding movies", function() {
     it("should find movies by title", function(done) {
-      cinemaInfo.findMovie('Pulp Fiction').then(function(actors) {
-        expect(actors[0].name).toEqual('Pulp Fiction');
+      cinemaInfo.findMovie('Pulp Fiction').then(function(movies) {
+        expect(movies[0].name).toEqual('Pulp Fiction');
+        done();
+      });
+    });
+  });
+
+  describe("finding movie connections", function() {
+    it("should find actor connected to movie", function(done) {
+      cinemaInfo.getConnections('movie_680').then(function(actors) {
+        expect(actors[0].name).toEqual('Bruce Willis');
+        done();
+      });
+    });
+  });
+
+  describe("finding person connections", function() {
+    it("should find movie person was an actor on", function(done) {
+      cinemaInfo.getConnections('person_31').then(function(movies) {
+        expect(movies[0].name).toEqual('Forrest Gump');
         done();
       });
     });
