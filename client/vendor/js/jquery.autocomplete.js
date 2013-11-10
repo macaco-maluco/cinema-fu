@@ -234,7 +234,7 @@
             offset = that.el.offset();
 
             $(that.suggestionsContainer).css({
-                top: (offset.top + that.el.outerHeight()) + 'px',
+                top: (offset.top + that.el.outerHeight() + 5) + 'px',
                 left: offset.left + 'px'
             });
         },

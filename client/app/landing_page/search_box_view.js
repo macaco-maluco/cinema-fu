@@ -10,6 +10,9 @@ function (_, Backbone) {
 
       this.$('.search').autocomplete({
         serviceUrl: '/nodes/',
+        offset: {
+          top: 5
+        },
         transformResult: function(response) {
           var data = JSON.parse(response);
           return {

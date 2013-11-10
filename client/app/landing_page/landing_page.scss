@@ -4,24 +4,25 @@
     background: $wine url(landing_page/img/header_background.jpg) top center;
     color: white;
     height: 342px;
+
+    .headline {
+      text-shadow: $dark-wine 1px 1px;
+      text-align: center;
+    }
+
+    .logo {
+      @include hide-text;
+      background-image: url(landing_page/img/logo.png);
+      width: 230px;
+      height: 100px;
+      margin: 95px auto 20px auto;
+    }
   }
 
   header {
     @include grid-row;
   }
 
-  .headline {
-    text-shadow: $dark-wine 1px 1px;
-    text-align: center;
-  }
-
-  .logo {
-    @include hide-text;
-    background-image: url(landing_page/img/logo.png);
-    width: 230px;
-    height: 100px;
-    margin: 95px auto 20px auto;
-  }
 
   section {
     @include grid-row;
@@ -80,11 +81,92 @@
     }
   }
 
+  .autocomplete-suggestions {
+    background: white;
+    border-radius: 4px;
+    text-transform: uppercase;
+    color: #a59992;
+  }
+
+  .autocomplete-suggestion {
+    padding: 10px;
+  }
+
+  .autocomplete-selected {
+    background: #fff7d8;
+    color: $wine;
+  }
+
   .create-challenge {
     @include grid-row();
-    .from-node, .to-node {
-      @include grid-column(6);
+    .to-node {
+      @include grid-column(4, $offset: 2);
       border: none;
+    }
+    .from-node {
+      @include grid-column(4, $offset: 1);
+      border: none;
+    }
+
+    h1 {
+      margin-top: 70px;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 35px;
+      color: #8e455b;
+      text-align: center;
+      text-shadow: #f4ece6 1px 1px;
+    }
+
+    .headline {
+      color: #6b5648;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .try-to-find-container {
+      @include grid-column(12);
+    }
+
+    .try-to-find {
+      background: $wine;
+      padding: 20px 40px;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      display: block;
+      margin: 40px auto;
+      font-size: 24px;
+      text-transform: uppercase;
+
+      &:hover {
+        background: #8e455b;
+      }
+    }
+
+    .search {
+      border-radius: 4px;
+      padding: 10px;
+      color: $wine;
+      font-size: 17px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: none;
+      width: 100%;
+      margin-bottom: 30px;
+      clear: both;
+    }
+
+    .selected-picture {
+      max-width: 150px;
+      max-height: 200px;
+      border-radius: 8px;
+      border-image-width: 0;
+      border-color: transparent;
+      border: none;
+      color: white;
+      display: block;
+      margin: auto;
     }
   }
 }
