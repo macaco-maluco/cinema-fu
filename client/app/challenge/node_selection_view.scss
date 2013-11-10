@@ -1,0 +1,7 @@
+.node-selection .node {
+	&:hover {
+		background-color: $light-beige;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}
