@@ -231,6 +231,7 @@
       ul {
         li {
           float: left;
+          list-style-type: none;
 
           img, input {
             display: block;
@@ -271,7 +272,7 @@
   }
 
   .fb-like {
-    padding: 3px;    
+    padding: 3px;
     margin: 12px 0;
   }
 
