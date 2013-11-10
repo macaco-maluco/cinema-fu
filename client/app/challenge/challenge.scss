@@ -1,0 +1,44 @@
+.challenge {
+  padding-top: 100px;
+
+  header {
+    background: $wine;
+    height: 80px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    h1 {
+      @include hide-text;
+      background-image: url(challenge/img/logo.png);
+      width: 117px;
+      height: 41px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  .path-container {
+    padding: 20px;
+  }
+
+  .available {
+    @include grid-row(1);
+
+    background: $dark-beige;
+    overflow: hidden;
+
+    .node {
+      @include grid-column(3);
+      margin-top: 20px;
+      min-height: 200px;
+      div {
+        max-width: 100px;
+        max-height: 120px;
+      }
+    }
+  }
+}

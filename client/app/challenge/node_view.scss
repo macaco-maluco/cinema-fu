@@ -1,3 +1,23 @@
 .node {
-  background: red;
+  div {
+    margin: 18px auto auto;
+    max-width: 150px;
+    max-height: 200px;
+    border-radius: 6px;
+    box-shadow: inset 0px 0px 30px 6px rgba(0,0,0,0.9);
+    overflow: hidden;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $wine;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 10px;
+  }
+
+  img {
+    position: relative;
+  }
 }
