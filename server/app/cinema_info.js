@@ -26,6 +26,10 @@ function parseMovie (movie) {
   };
 }
 
+function filterEmptyImage(item) {
+  return item.poster_path != null || item.profile_path != null;
+}
+
 function CinemaInfo () {}
 
 CinemaInfo.prototype = {
@@ -41,7 +45,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.results.map(parsePerson));
+          resolve(res.results.filter(filterEmptyImage).map(parsePerson));
         }
       });
     });
@@ -53,7 +57,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.results.map(parseMovie));
+          resolve(res.results.filter(filterEmptyImage).map(parseMovie));
         }
       });
     });
@@ -65,7 +69,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.cast.map(parsePerson));
+          resolve(res.cast.filter(filterEmptyImage).map(parsePerson));
         }
       });
     });
@@ -77,7 +81,7 @@ CinemaInfo.prototype = {
         if (err) {
           reject(err);
         } else {
-          resolve(res.cast.map(parseMovie));
+          resolve(res.cast.filter(filterEmptyImage).map(parseMovie));
         }
       });
     });

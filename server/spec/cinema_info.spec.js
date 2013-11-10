@@ -20,7 +20,7 @@ describe("CinemaInfo", function() {
 
   describe("finding nodes", function() {
     it("should limit search result to 10 results", function(done) {
-      cinemaInfo.find('Kevin').then(function(nodes) {
+      cinemaInfo.find('Tom').then(function(nodes) {
         expect(nodes.length).toEqual(10);
         done();
       });
