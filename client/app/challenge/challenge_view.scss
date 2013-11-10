@@ -11,6 +11,10 @@
     }
   }
 
+  .goal {
+    margin-bottom: 80px;
+  }
+
   .path-container {
     padding-top: 20px;
   }
@@ -18,6 +22,7 @@
   .available {
     background: $dark-beige;
     overflow: hidden;
+    margin-bottom: 80px;
   }
 
   .node-selection {

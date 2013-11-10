@@ -181,19 +181,7 @@
     }
 
     .try-to-find {
-      background: $wine;
-      padding: 20px 40px;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      display: block;
-      margin: 40px auto;
-      font-size: 24px;
-      text-transform: uppercase;
-
-      &:hover {
-        background: #8e455b;
-      }
+      @include action-button;
     }
 
     .search {

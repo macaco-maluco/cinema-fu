@@ -1,4 +1,15 @@
 .end-challenge {
+
+  .retry {
+    @include action-button;
+  }
+
+  .praise {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
   .sharing {
     h1 {
       font-size: 30px;

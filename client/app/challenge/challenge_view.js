@@ -48,6 +48,7 @@ function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
     this.result.show(new EndChallengeView());
     this.trigger('end');
     this.available.close();
+    this.$('.available').remove();
   }
 
   return ChallengeView;
