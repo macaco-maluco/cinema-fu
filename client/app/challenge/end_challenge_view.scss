@@ -1,0 +1,38 @@
+.end-challenge {
+  .sharing {
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 20px;
+      margin: 40px 0;
+    }
+    background: #45424f;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    margin-top: 60px
+  }
+
+  .nko-share {
+    background: white;
+    margin: auto;
+    width: 120px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .facebook-share {
+    color: #45424f;
+    font-size: 40px;
+    &:hover {
+      .icon-facebook {
+        color: white;
+      }
+      .icon-stack-base {
+        color: #4b9ed1;
+      }
+    }
+  }
+}

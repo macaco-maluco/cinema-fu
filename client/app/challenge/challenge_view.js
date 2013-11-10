@@ -1,10 +1,11 @@
 define([
   'tpl!challenge/challenge_view.jst',
   'backbone.marionette',
+  'challenge/end_challenge_view',
   'challenge/node_view',
   'challenge/node_selection_view'
 ],
-function (template, Marionette, NodeView, NodeSelectionView) {
+function (template, Marionette, EndChallengeView, NodeView, NodeSelectionView) {
   var PathView = Marionette.CollectionView.extend({
     className: 'path',
     itemView: NodeView
@@ -17,7 +18,8 @@ function (template, Marionette, NodeView, NodeSelectionView) {
       start: '.start',
       goal: '.goal',
       path: '.path-container',
-      available: '.available'
+      available: '.available',
+      result: '.result'
     },
 
     modelEvents: {
@@ -43,6 +45,7 @@ function (template, Marionette, NodeView, NodeSelectionView) {
   }
 
   function end () {
+    this.result.show(new EndChallengeView());
     this.trigger('end');
     this.available.close();
   }
