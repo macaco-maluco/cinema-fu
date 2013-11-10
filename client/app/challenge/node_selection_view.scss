@@ -1,7 +1,9 @@
-.node-selection .node {
-	&:hover {
-		background-color: $light-beige;
-		border-radius: 5px;
-		cursor: pointer;
-	}
+.node-selection  {
+  min-height: 100px;
+  
+  .node:hover {
+    background-color: $light-beige;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
