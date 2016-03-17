@@ -1,4 +1,5 @@
 var mongoose = require('mongoose'),
+    url = require('url'),
     Schema = mongoose.Schema,
     CinemaInfo = require('./cinema_info'),
     RSVP = require('rsvp'),
@@ -6,7 +7,13 @@ var mongoose = require('mongoose'),
 
 var cinemaInfo = new CinemaInfo();
 
-mongoose.connect('mongodb://localhost/cinemafu');
+var mongoConfig = {
+  host: url.parse(process.env.MONGO_PORT).hostname,
+  port: url.parse(process.env.MONGO_PORT).port,
+  database: process.env.MONGO_DATABASE
+}
+
+mongoose.connect('mongodb://' + mongoConfig.host + ':' + mongoConfig.port + '/' + mongoConfig.database);
 
 var nodeSchema = new Schema({
   id: String,
@@ -45,7 +52,7 @@ function fetchAndUpdate (model) {
 
       return new Promise(function (resolve, reject) {
         model.save(function (err) {
-          if (err) { 
+          if (err) {
             reject(err);
           } else {
             resolve(model);
