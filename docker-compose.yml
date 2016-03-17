@@ -1,0 +1,14 @@
+node:
+  image: node:0.10.43-onbuild
+  command: npm start
+  links:
+    - mongo:mongo
+  ports:
+    - 8000:8000
+  volumes:
+    - .:/usr/src/app
+  environment:
+    TMDB_API_KEY:
+
+mongo:
+  image: mongo:2.4.14

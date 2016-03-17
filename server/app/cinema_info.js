@@ -4,8 +4,11 @@ var request = require('request'),
     tmdb = require('tmdbv3').init(process.env.TMDB_API_KEY),
     _ = require('underscore');
 
+// It should be taken dinamicaly from the `/configure` API call
+// but I'm hardcoding this here for now
+// more info: http://docs.themoviedb.apiary.io/#reference/configuration/configuration/get
 var imageConfig = {
-    baseUrl: "http://d3gtl9l2a4fn1j.cloudfront.net/t/p/",
+    baseUrl: "http://image.tmdb.org/t/p/",
     personSize: "w185",
     posterSize: "w185"
 };
